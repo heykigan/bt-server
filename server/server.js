@@ -20,7 +20,10 @@ const app = express();
 const port = process.env.PORT || 3001;
 app.use(cors())
 app.use(bodyParser.json());
-app.use(cookieParser());
+
+// app.use(bodyParser.urlencoded());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(cookieParser());
 app.use('/api/users', usersRoute);
 app.use('/api/news', newsRoute);
 app.listen(port, () => {
